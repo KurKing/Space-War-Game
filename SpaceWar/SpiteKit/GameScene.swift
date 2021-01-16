@@ -15,11 +15,31 @@ class GameScene: SKScene {
     
     //MARK: Did Move
     override func didMove(to view: SKView) {
-        spaceShip = SKSpriteNode(imageNamed: Names.redSpaceShip)
         
+        // BG node
+        let spaceBackground = SKSpriteNode(imageNamed: ImageNames.backgroundImage)
+        spaceBackground.size = CGSize(width: view.bounds.width*2, height: view.bounds.height*2)
+        addChild(spaceBackground)
+        
+        // Space sheep node
+        spaceShip = SKSpriteNode(imageNamed: ImageNames.redSpaceShip)
         spaceShip.size = CGSize(width: 101, height: 175)
+        spaceShip.physicsBody = SKPhysicsBody(texture: spaceShip.texture!, size: spaceShip.size)
+        spaceShip.physicsBody?.isDynamic = false
         
         addChild(spaceShip)
+        
+        let meteorSequensAction = SKAction.sequence([
+            SKAction.run {
+                let meteor = self.createMeteor()
+                self.addChild(meteor)
+            },
+            SKAction.wait(forDuration: 0.7, withRange: 0.5)
+        ])
+        
+        let meteorRunAction = SKAction.repeatForever(meteorSequensAction)
+        
+        run(meteorRunAction)
     }
     
     //MARK: Touches
@@ -35,9 +55,24 @@ class GameScene: SKScene {
         }
     }
     
-    //MARK: SpaceShip size
-    private func getSpaceShipSize(width: Int) -> CGSize {
-        let height = Int(width / 101 * 175)
-        return CGSize(width: width, height: height)
+    //MARK: Meteor
+    private func createMeteor() -> SKSpriteNode{
+        let meteor = SKSpriteNode(imageNamed: ImageNames.meteor)
+        let size = Int.random(in: 40...150)
+        
+        meteor.position.x = CGFloat.random(in: -frame.size.width/2...frame.size.width/2)
+        meteor.position.y = frame.size.height/2 + meteor.size.height
+        meteor.size = CGSize(width: size, height: size)
+        
+        meteor.physicsBody = SKPhysicsBody(texture: meteor.texture!, size: meteor.size)
+        
+        return meteor
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        
+        //        let meteor = createMeteor()
+        //        addChild(meteor)
+        
     }
 }

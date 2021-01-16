@@ -13,7 +13,7 @@
 		D223F87025B318C50050B2F3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223F86F25B318C50050B2F3 /* GameViewController.swift */; };
 		D223F87325B318C50050B2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223F87125B318C50050B2F3 /* Main.storyboard */; };
 		D223F87525B318C70050B2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D223F87425B318C70050B2F3 /* Assets.xcassets */; };
-		D223F87E25B31BA50050B2F3 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223F87D25B31BA50050B2F3 /* Names.swift */; };
+		D223F87E25B31BA50050B2F3 /* ImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223F87D25B31BA50050B2F3 /* ImageNames.swift */; };
 		D223F88A25B3285B0050B2F3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D223F88925B3285B0050B2F3 /* GameScene.sks */; };
 		D223F8F425B337490050B2F3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223F8F325B337490050B2F3 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		D223F87225B318C50050B2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D223F87425B318C70050B2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D223F87625B318C70050B2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D223F87D25B31BA50050B2F3 /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
+		D223F87D25B31BA50050B2F3 /* ImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
 		D223F88925B3285B0050B2F3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		D223F8F325B337490050B2F3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D223F87425B318C70050B2F3 /* Assets.xcassets */,
-				D223F87D25B31BA50050B2F3 /* Names.swift */,
+				D223F87D25B31BA50050B2F3 /* ImageNames.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			files = (
 				D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */,
 				D223F87025B318C50050B2F3 /* GameViewController.swift in Sources */,
-				D223F87E25B31BA50050B2F3 /* Names.swift in Sources */,
+				D223F87E25B31BA50050B2F3 /* ImageNames.swift in Sources */,
 				D223F86825B318C50050B2F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kurking.SpaceWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -351,7 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kurking.SpaceWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
