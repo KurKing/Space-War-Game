@@ -18,5 +18,5 @@ struct Config {
     
     static let spaceShipSpeed = 800
     
-    static let meteorPerSecond: Double = 2.5
+    static let meteorPerSecond: Double = 2
 }
