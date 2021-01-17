@@ -10,7 +10,9 @@ import SwiftUI
 struct MenuView: View {
     
     @State private var buttonAnimating = false
+    @State private var showInfoView = false
     let delegate: ButtonPressedDelegate
+    
     
     var body: some View {
         VStack {
@@ -35,21 +37,24 @@ struct MenuView: View {
             
             HStack(alignment: .center, spacing: 30){
                 
+                //question button
+                Button(action: {
+                    showInfoView.toggle()
+                }, label: {
+                    Image("question-button")
+                        .resizable()
+                        .frame(width: 60, height: 60, alignment: .center)
+                })
+                .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
+                .sheet(isPresented: $showInfoView, content: {
+                    InfoView()
+                })
+                
                 //gear button
                 Button(action: {
                     delegate.gearButtonPressedDelegate()
                 }, label: {
                     Image("gear-button")
-                        .resizable()
-                        .frame(width: 60, height: 60, alignment: .center)
-                })
-                .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
-                
-                //question button
-                Button(action: {
-                    delegate.questionButtonPressedDelegate()
-                }, label: {
-                    Image("question-button")
                         .resizable()
                         .frame(width: 60, height: 60, alignment: .center)
                 })

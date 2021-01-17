@@ -11,6 +11,7 @@
 		D223F87525B318C70050B2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D223F87425B318C70050B2F3 /* Assets.xcassets */; };
 		D223F88A25B3285B0050B2F3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D223F88925B3285B0050B2F3 /* GameScene.sks */; };
 		D223F8F425B337490050B2F3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223F8F325B337490050B2F3 /* Launch Screen.storyboard */; };
+		D2570A8925B4B9FC00F58EB2 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2570A8825B4B9FC00F58EB2 /* InfoView.swift */; };
 		D28013C825B42879004236CC /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013C725B42879004236CC /* SpaceShip.swift */; };
 		D28013CB25B42B47004236CC /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013CA25B42B47004236CC /* Meteor.swift */; };
 		D28013D525B43BE5004236CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013D425B43BE5004236CC /* Constants.swift */; };
@@ -30,6 +31,7 @@
 		D223F87625B318C70050B2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D223F88925B3285B0050B2F3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		D223F8F325B337490050B2F3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D2570A8825B4B9FC00F58EB2 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D28013C725B42879004236CC /* SpaceShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
 		D28013CA25B42B47004236CC /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		D28013D425B43BE5004236CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -98,8 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				D28013ED25B47D32004236CC /* ContentView.swift */,
-				D28013F925B47E43004236CC /* SettingsView.swift */,
 				D28013FC25B48372004236CC /* MenuView.swift */,
+				D28013F925B47E43004236CC /* SettingsView.swift */,
+				D2570A8825B4B9FC00F58EB2 /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28013FA25B47E43004236CC /* SettingsView.swift in Sources */,
+				D2570A8925B4B9FC00F58EB2 /* InfoView.swift in Sources */,
 				D28013FD25B48372004236CC /* MenuView.swift in Sources */,
 				D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */,
 				D28013C825B42879004236CC /* SpaceShip.swift in Sources */,
