@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SpriteKit
+import GameplayKit
 
 struct ContentView: View, ButtonPressedDelegate {
     
@@ -13,26 +15,30 @@ struct ContentView: View, ButtonPressedDelegate {
     @State var showMenu = true
     
     func playButtonPressedDelegate() {
-        print("playButtonPressedDelegate")
+        showMenu = false
     }
     
     func gearButtonPressedDelegate() {
-        print("gearButtonPressedDelegate")
+        
     }
     
     func questionButtonPressedDelegate() {
-        print("questionButtonPressedDelegate")
+        
     }
     
     //MARK: - Body
     var body: some View {
         ZStack {
-            Text("Scene")
-            MenuView(delegate: self)
-                .shadow(color: Color.black.opacity(0.4), radius: 6, x: 3, y: 2)
+            
+            EmptyView()
+                .blur(radius: showMenu ? 5 : 0)
+            
+            if showMenu {
+                MenuView(delegate: self)
+                    .shadow(color: Color.black.opacity(0.4), radius: 6, x: 3, y: 2)
+            }
+            
         }//:ZStack
-        .frame(width: 600, height: 600, alignment: .center)
-        .background(Color.white)
         
     }//:Body
 }
