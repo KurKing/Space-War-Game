@@ -17,6 +17,8 @@
 		D223F8F425B337490050B2F3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223F8F325B337490050B2F3 /* Launch Screen.storyboard */; };
 		D28013BD25B3604A004236CC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013BC25B3604A004236CC /* Config.swift */; };
 		D28013C225B369D8004236CC /* NodeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013C125B369D8004236CC /* NodeInfo.swift */; };
+		D28013C825B42879004236CC /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013C725B42879004236CC /* SpaceShip.swift */; };
+		D28013CB25B42B47004236CC /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013CA25B42B47004236CC /* Meteor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D223F8F325B337490050B2F3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D28013BC25B3604A004236CC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D28013C125B369D8004236CC /* NodeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeInfo.swift; sourceTree = "<group>"; };
+		D28013C725B42879004236CC /* SpaceShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
+		D28013CA25B42B47004236CC /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				D223F88925B3285B0050B2F3 /* GameScene.sks */,
 				D223F86D25B318C50050B2F3 /* GameScene.swift */,
+				D28013C725B42879004236CC /* SpaceShip.swift */,
+				D28013CA25B42B47004236CC /* Meteor.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -184,6 +190,8 @@
 			files = (
 				D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */,
 				D223F87025B318C50050B2F3 /* GameViewController.swift in Sources */,
+				D28013C825B42879004236CC /* SpaceShip.swift in Sources */,
+				D28013CB25B42B47004236CC /* Meteor.swift in Sources */,
 				D223F87E25B31BA50050B2F3 /* ImageNames.swift in Sources */,
 				D223F86825B318C50050B2F3 /* AppDelegate.swift in Sources */,
 				D28013C225B369D8004236CC /* NodeInfo.swift in Sources */,
