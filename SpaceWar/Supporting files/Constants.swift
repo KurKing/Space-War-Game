@@ -13,8 +13,7 @@ struct Categories {
 }
 
 struct ImageNames {
-    static let redSpaceShip = "redSpaceShip"
-    static let blueSpaceShip = "blueSpaceShip"
+    static let spaceShip = "redSpaceShip"
     static let meteor = "meteor"
     static let backgroundImage = "bg"
 }

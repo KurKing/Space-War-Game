@@ -15,8 +15,7 @@ struct SpaceShip {
     private let spaceShipWidth = 50
     private let spaceShipHeigth: Int = 50*175/101
     
-    //private let node = SKSpriteNode(imageNamed: [ImageNames.redSpaceShip,ImageNames.blueSpaceShip].randomElement()!)
-    private let node = SKSpriteNode(imageNamed: ImageNames.redSpaceShip)
+    private let node = SKSpriteNode(imageNamed: ImageNames.spaceShip)
     
     init() {
         // add some configs to SKSpriteNode:

@@ -17,6 +17,9 @@
 		D28013E025B46900004236CC /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = D28013DE25B46900004236CC /* Stars.sks */; };
 		D28013E725B47C89004236CC /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013E625B47C89004236CC /* App.swift */; };
 		D28013EE25B47D32004236CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013ED25B47D32004236CC /* ContentView.swift */; };
+		D28013FA25B47E43004236CC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013F925B47E43004236CC /* SettingsView.swift */; };
+		D28013FD25B48372004236CC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013FC25B48372004236CC /* MenuView.swift */; };
+		D280140725B494D4004236CC /* ButtonPressedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280140625B494D4004236CC /* ButtonPressedDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		D28013DE25B46900004236CC /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stars.sks; sourceTree = "<group>"; };
 		D28013E625B47C89004236CC /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D28013ED25B47D32004236CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D28013F925B47E43004236CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D28013FC25B48372004236CC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		D280140625B494D4004236CC /* ButtonPressedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressedDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 				D28013E625B47C89004236CC /* App.swift */,
 				D223F88125B31C070050B2F3 /* GameScenes */,
 				D28013F025B47D5C004236CC /* GameNodes */,
+				D280140525B494B7004236CC /* Protocols */,
 				D223F88325B31C1B0050B2F3 /* Views */,
 				D223F88425B31C250050B2F3 /* Supporting files */,
 				D223F87625B318C70050B2F3 /* Info.plist */,
@@ -88,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				D28013ED25B47D32004236CC /* ContentView.swift */,
+				D28013F925B47E43004236CC /* SettingsView.swift */,
+				D28013FC25B48372004236CC /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +118,14 @@
 				D28013CA25B42B47004236CC /* Meteor.swift */,
 			);
 			path = GameNodes;
+			sourceTree = "<group>";
+		};
+		D280140525B494B7004236CC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D280140625B494D4004236CC /* ButtonPressedDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,12 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28013FA25B47E43004236CC /* SettingsView.swift in Sources */,
+				D28013FD25B48372004236CC /* MenuView.swift in Sources */,
 				D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */,
 				D28013C825B42879004236CC /* SpaceShip.swift in Sources */,
 				D28013EE25B47D32004236CC /* ContentView.swift in Sources */,
 				D28013CB25B42B47004236CC /* Meteor.swift in Sources */,
 				D28013E725B47C89004236CC /* App.swift in Sources */,
 				D28013D525B43BE5004236CC /* Constants.swift in Sources */,
+				D280140725B494D4004236CC /* ButtonPressedDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
