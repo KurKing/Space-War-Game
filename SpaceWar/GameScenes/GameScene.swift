@@ -15,8 +15,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var spaceBackground: SKSpriteNode!
     private var stars: SKSpriteNode!
     
-    private var score: Score!
-    
     //MARK: Did Move
     override func didMove(to view: SKView) {
     
@@ -42,11 +40,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Add meteors
         meteor = Meteor(frameSize: frame.size)
         meteor.run(in: self)
-        
-        // Score label
-        score = Score(frameSize: frame.size)
-        score.labelNode.zPosition = 2
-        addChild(score.labelNode)
     }
     
     //MARK: Touches
@@ -68,14 +61,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if meteor.position.y < -heigth/2-meteor.frame.height {
                 meteor.removeFromParent()
-                self.score.plusOne()
             }
         }
     }
     //MARK: SKPhysicsContactDelegate
     func didBegin(_ contact: SKPhysicsContact) {
         if isCollisionHappend(contact) {
-            score.lose()
+            // lose
         }
     }
     

@@ -7,26 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D223F86825B318C50050B2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223F86725B318C50050B2F3 /* AppDelegate.swift */; };
 		D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223F86D25B318C50050B2F3 /* GameScene.swift */; };
-		D223F87025B318C50050B2F3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223F86F25B318C50050B2F3 /* GameViewController.swift */; };
-		D223F87325B318C50050B2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223F87125B318C50050B2F3 /* Main.storyboard */; };
 		D223F87525B318C70050B2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D223F87425B318C70050B2F3 /* Assets.xcassets */; };
 		D223F88A25B3285B0050B2F3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D223F88925B3285B0050B2F3 /* GameScene.sks */; };
 		D223F8F425B337490050B2F3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D223F8F325B337490050B2F3 /* Launch Screen.storyboard */; };
 		D28013C825B42879004236CC /* SpaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013C725B42879004236CC /* SpaceShip.swift */; };
 		D28013CB25B42B47004236CC /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013CA25B42B47004236CC /* Meteor.swift */; };
 		D28013D525B43BE5004236CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013D425B43BE5004236CC /* Constants.swift */; };
-		D28013DA25B43C1B004236CC /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013D925B43C1B004236CC /* Score.swift */; };
 		D28013E025B46900004236CC /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = D28013DE25B46900004236CC /* Stars.sks */; };
+		D28013E725B47C89004236CC /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013E625B47C89004236CC /* App.swift */; };
+		D28013EE25B47D32004236CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013ED25B47D32004236CC /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D223F86425B318C50050B2F3 /* SpaceWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D223F86725B318C50050B2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D223F86D25B318C50050B2F3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		D223F86F25B318C50050B2F3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		D223F87225B318C50050B2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D223F87425B318C70050B2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D223F87625B318C70050B2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D223F88925B3285B0050B2F3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -34,8 +29,9 @@
 		D28013C725B42879004236CC /* SpaceShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceShip.swift; sourceTree = "<group>"; };
 		D28013CA25B42B47004236CC /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		D28013D425B43BE5004236CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D28013D925B43C1B004236CC /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		D28013DE25B46900004236CC /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stars.sks; sourceTree = "<group>"; };
+		D28013E625B47C89004236CC /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D28013ED25B47D32004236CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +64,9 @@
 		D223F86625B318C50050B2F3 /* SpaceWar */ = {
 			isa = PBXGroup;
 			children = (
-				D223F86725B318C50050B2F3 /* AppDelegate.swift */,
-				D223F88125B31C070050B2F3 /* Game */,
-				D223F88625B31C3C0050B2F3 /* Controllers */,
+				D28013E625B47C89004236CC /* App.swift */,
+				D223F88125B31C070050B2F3 /* GameScenes */,
+				D28013F025B47D5C004236CC /* GameNodes */,
 				D223F88325B31C1B0050B2F3 /* Views */,
 				D223F88425B31C250050B2F3 /* Supporting files */,
 				D223F87625B318C70050B2F3 /* Info.plist */,
@@ -78,24 +74,20 @@
 			path = SpaceWar;
 			sourceTree = "<group>";
 		};
-		D223F88125B31C070050B2F3 /* Game */ = {
+		D223F88125B31C070050B2F3 /* GameScenes */ = {
 			isa = PBXGroup;
 			children = (
 				D28013DE25B46900004236CC /* Stars.sks */,
 				D223F88925B3285B0050B2F3 /* GameScene.sks */,
 				D223F86D25B318C50050B2F3 /* GameScene.swift */,
-				D28013C725B42879004236CC /* SpaceShip.swift */,
-				D28013CA25B42B47004236CC /* Meteor.swift */,
-				D28013D925B43C1B004236CC /* Score.swift */,
 			);
-			path = Game;
+			path = GameScenes;
 			sourceTree = "<group>";
 		};
 		D223F88325B31C1B0050B2F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D223F87125B318C50050B2F3 /* Main.storyboard */,
-				D223F8F325B337490050B2F3 /* Launch Screen.storyboard */,
+				D28013ED25B47D32004236CC /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,17 +96,19 @@
 			isa = PBXGroup;
 			children = (
 				D28013D425B43BE5004236CC /* Constants.swift */,
+				D223F8F325B337490050B2F3 /* Launch Screen.storyboard */,
 				D223F87425B318C70050B2F3 /* Assets.xcassets */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
-		D223F88625B31C3C0050B2F3 /* Controllers */ = {
+		D28013F025B47D5C004236CC /* GameNodes */ = {
 			isa = PBXGroup;
 			children = (
-				D223F86F25B318C50050B2F3 /* GameViewController.swift */,
+				D28013C725B42879004236CC /* SpaceShip.swift */,
+				D28013CA25B42B47004236CC /* Meteor.swift */,
 			);
-			path = Controllers;
+			path = GameNodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D223F88A25B3285B0050B2F3 /* GameScene.sks in Resources */,
-				D223F87325B318C50050B2F3 /* Main.storyboard in Resources */,
 				D223F87525B318C70050B2F3 /* Assets.xcassets in Resources */,
 				D223F8F425B337490050B2F3 /* Launch Screen.storyboard in Resources */,
 				D28013E025B46900004236CC /* Stars.sks in Resources */,
@@ -190,27 +183,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */,
-				D223F87025B318C50050B2F3 /* GameViewController.swift in Sources */,
 				D28013C825B42879004236CC /* SpaceShip.swift in Sources */,
-				D28013DA25B43C1B004236CC /* Score.swift in Sources */,
+				D28013EE25B47D32004236CC /* ContentView.swift in Sources */,
 				D28013CB25B42B47004236CC /* Meteor.swift in Sources */,
-				D223F86825B318C50050B2F3 /* AppDelegate.swift in Sources */,
+				D28013E725B47C89004236CC /* App.swift in Sources */,
 				D28013D525B43BE5004236CC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D223F87125B318C50050B2F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D223F87225B318C50050B2F3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D223F87725B318C70050B2F3 /* Debug */ = {
