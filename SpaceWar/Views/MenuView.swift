@@ -11,6 +11,7 @@ struct MenuView: View {
     
     @State private var buttonAnimating = false
     @State private var showInfoView = false
+    @State private var showSettingsView = false
     let delegate: ButtonPressedDelegate
     
     
@@ -52,13 +53,16 @@ struct MenuView: View {
                 
                 //gear button
                 Button(action: {
-                    delegate.gearButtonPressedDelegate()
+                    showSettingsView.toggle()
                 }, label: {
                     Image("gear-button")
                         .resizable()
                         .frame(width: 60, height: 60, alignment: .center)
                 })
                 .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
+                .sheet(isPresented: $showSettingsView, content: {
+                    SettingsView()
+                })
             }
         }//:VStack
         .padding(40)

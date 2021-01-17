@@ -9,5 +9,4 @@ import Foundation
 
 protocol ButtonPressedDelegate {
     func playButtonPressedDelegate()
-    func gearButtonPressedDelegate()
 }
