@@ -12,6 +12,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private let spaceShip = SpaceShip()
     private var meteor: Meteor!
+    private var spaceBackground: SKSpriteNode!
+    
+    private var score: Score!
     
     //MARK: Did Move
     override func didMove(to view: SKView) {
@@ -20,16 +23,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         
         //Create BG
-        let spaceBackground = SKSpriteNode(imageNamed: ImageNames.backgroundImage)
-        spaceBackground.size = CGSize(width: view.bounds.width, height: view.bounds.height)
+        spaceBackground = SKSpriteNode(imageNamed: ImageNames.backgroundImage)
+        spaceBackground.size = CGSize(width: view.bounds.width+50, height: view.bounds.height+50)
         addChild(spaceBackground)
         
         // Create space ship
         addChild(spaceShip.SKNode)
         
-        //Add meteors
+        // Add meteors
         meteor = Meteor(frameSize: frame.size)
         meteor.run(in: self)
+        
+        // Score label
+        score = Score(frameSize: frame.size)
+        addChild(score.labelNode)
     }
     
     //MARK: Touches
@@ -37,26 +44,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let touch = touches.first {
             let touchLocation = touch.location(in: self)
             spaceShip.move(to: touchLocation)
+            
+            let bgMoveAction = SKAction.move(to: CGPoint(x: -touchLocation.x/80, y: -touchLocation.y/80), duration: 0.1)
+            spaceBackground.run(bgMoveAction)
         }
     }
     
     //MARK: Simulate Physics
     override func didSimulatePhysics() {
         //deleting meteors
-        enumerateChildNodes(withName: NodeInfo.meteor) { (meteor, stop) in
+        enumerateChildNodes(withName: "meteor") { (meteor, stop) in
             let heigth = UIScreen.main.bounds.height
             
             if meteor.position.y < -heigth/2-meteor.frame.height {
                 meteor.removeFromParent()
+                self.score.plusOne()
             }
         }
     }
-    //MARK: - SKPhysicsContactDelegate
+    //MARK: SKPhysicsContactDelegate
     func didBegin(_ contact: SKPhysicsContact) {
-        print("\(contact.bodyA.node?.name) vs. \(contact.bodyB.node?.name)")
+        if isCollisionHappend(contact) {
+            score.lose()
+        }
     }
     
-    func didEnd(_ contact: SKPhysicsContact) {
-        
+    private func isCollisionHappend(_ contact: SKPhysicsContact) -> Bool {
+        return contact.bodyA.categoryBitMask == Categories.spaceShip || contact.bodyB.categoryBitMask == Categories.spaceShip
     }
+
 }

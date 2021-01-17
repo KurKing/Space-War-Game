@@ -11,22 +11,27 @@ import GameplayKit
 /// hepler struct for SpaceShip;
 /// contain the actual SKSpriteNode and some additional features for the spaceship
 struct SpaceShip {
+    
+    private let spaceShipWidth = 50
+    private let spaceShipHeigth: Int = 50*175/101
+    
+    //private let node = SKSpriteNode(imageNamed: [ImageNames.redSpaceShip,ImageNames.blueSpaceShip].randomElement()!)
     private let node = SKSpriteNode(imageNamed: ImageNames.redSpaceShip)
     
     init() {
         // add some configs to SKSpriteNode:
-        node.size = CGSize(width: Config.spaceShipWidth, height: Config.spaceShipHeigth)
+        node.size = CGSize(width: spaceShipWidth, height: spaceShipHeigth)
         
         // physicsBody
         node.physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         node.physicsBody?.isDynamic = false
         
         //collision
-        node.physicsBody?.categoryBitMask = NodeInfo.spaceShipCategory
-        node.physicsBody?.collisionBitMask = NodeInfo.meteorCategory
-        node.physicsBody?.contactTestBitMask = NodeInfo.meteorCategory
+        node.physicsBody?.categoryBitMask = Categories.spaceShip
+        node.physicsBody?.collisionBitMask = Categories.meteor
+        node.physicsBody?.contactTestBitMask = Categories.meteor
         
-        node.name = NodeInfo.spaceShip
+        node.name = "spaceShip"
     }
     
     /// move space ship to new location
@@ -39,7 +44,7 @@ struct SpaceShip {
     
     /// calculate time for move from startPoint to finishPoint
     private func timeForMoveCalculate(startPoint: CGPoint, finishPoint: CGPoint) -> TimeInterval {
-        return TimeInterval(sqrt((startPoint.x-finishPoint.x)*(startPoint.x-finishPoint.x)+(startPoint.y-finishPoint.y)*(startPoint.y-finishPoint.y))/CGFloat(Config.spaceShipSpeed))
+        return TimeInterval(sqrt((startPoint.x-finishPoint.x)*(startPoint.x-finishPoint.x)+(startPoint.y-finishPoint.y)*(startPoint.y-finishPoint.y))/800.0)
     }
     
     /// get reference to SKSpriteNode of space ship

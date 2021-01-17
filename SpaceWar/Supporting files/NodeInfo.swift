@@ -7,10 +7,7 @@
 
 import Foundation
 
-struct NodeInfo {
-    static let meteor = "meteor"
-    static let spaceShip = "spaceShip"
-    
+struct Categories {
     static let meteorCategory: UInt32 = 0x1 << 0
     static let spaceShipCategory: UInt32 = 0x1 << 1
 }

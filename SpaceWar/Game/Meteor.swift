@@ -15,7 +15,9 @@ struct Meteor {
     /// get new meteor node
     var node: SKSpriteNode {
         let meteor = SKSpriteNode(imageNamed: ImageNames.meteor)
-        let size = Int.random(in: Config.minMeteorSize...Config.maxMeteorSize)
+        let size = Int.random(in: 20...90)
+        
+        
         
         //position
         meteor.position.x = CGFloat.random(in: -frameSize.width/2...frameSize.width/2)
@@ -26,11 +28,22 @@ struct Meteor {
         meteor.physicsBody = SKPhysicsBody(texture: meteor.texture!, size: meteor.size)
         
         //collision
-        meteor.physicsBody?.categoryBitMask = NodeInfo.spaceShipCategory
-        meteor.physicsBody?.collisionBitMask = NodeInfo.spaceShipCategory
-        meteor.physicsBody?.contactTestBitMask = NodeInfo.spaceShipCategory
+        meteor.physicsBody?.categoryBitMask = Categories.meteor
+        meteor.physicsBody?.collisionBitMask = Categories.spaceShip | Categories.meteor
+        meteor.physicsBody?.contactTestBitMask = Categories.spaceShip
         
-        meteor.name = NodeInfo.meteor
+        meteor.physicsBody?.angularVelocity = CGFloat(Float.random(in: -5...5))
+        meteor.physicsBody?.velocity.dx = CGFloat(Float.random(in: -100...100))
+        
+        meteor.name = "meteor"
+        
+        let colorAnimation = SKAction.colorize(with: [
+            UIColor.red,
+            UIColor.yellow,
+            UIColor.green,
+            UIColor.white
+        ].randomElement()!, colorBlendFactor: 0.2, duration: 0)
+        meteor.run(colorAnimation)
         
         return meteor
     }
@@ -42,7 +55,7 @@ struct Meteor {
                 let meteor = self.node
                 parent.addChild(meteor)
             },
-            SKAction.wait(forDuration: 1.0/Config.meteorPerSecond, withRange: 0.5)
+            SKAction.wait(forDuration: 0.5, withRange: 0.5)
         ])
         
         parent.run(SKAction.repeatForever(meteorSequensAction))
