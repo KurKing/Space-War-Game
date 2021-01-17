@@ -23,7 +23,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Create BG
         spaceBackground = SKSpriteNode(imageNamed: ImageNames.backgroundImage)
-        spaceBackground.size = CGSize(width: view.bounds.width+50, height: view.bounds.height+50)
+        spaceBackground.size = CGSize(width: UIScreen.main.bounds.width+50, height: UIScreen.main.bounds.height+50)
         spaceBackground.zPosition = 0
         addChild(spaceBackground)
         
