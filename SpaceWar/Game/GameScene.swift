@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let spaceShip = SpaceShip()
     private var meteor: Meteor!
     private var spaceBackground: SKSpriteNode!
+    private var stars: SKSpriteNode!
     
     private var score: Score!
     
@@ -25,9 +26,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Create BG
         spaceBackground = SKSpriteNode(imageNamed: ImageNames.backgroundImage)
         spaceBackground.size = CGSize(width: view.bounds.width+50, height: view.bounds.height+50)
+        spaceBackground.zPosition = 0
         addChild(spaceBackground)
         
+        // Starts
+        stars = SKSpriteNode(fileNamed: "Stars")
+        stars.position = CGPoint(x: 0, y: frame.size.height/2+10)
+        stars.zPosition = 0
+        addChild(stars)
+        
         // Create space ship
+        spaceShip.SKNode.zPosition = 1
         addChild(spaceShip.SKNode)
         
         // Add meteors
@@ -36,6 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Score label
         score = Score(frameSize: frame.size)
+        score.labelNode.zPosition = 2
         addChild(score.labelNode)
     }
     

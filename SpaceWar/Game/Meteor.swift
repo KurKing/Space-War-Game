@@ -53,6 +53,7 @@ struct Meteor {
         let meteorSequensAction = SKAction.sequence([
             SKAction.run {
                 let meteor = self.node
+                meteor.zPosition = 1
                 parent.addChild(meteor)
             },
             SKAction.wait(forDuration: 0.5, withRange: 0.5)

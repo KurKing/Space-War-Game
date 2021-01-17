@@ -18,6 +18,7 @@
 		D28013CB25B42B47004236CC /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013CA25B42B47004236CC /* Meteor.swift */; };
 		D28013D525B43BE5004236CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013D425B43BE5004236CC /* Constants.swift */; };
 		D28013DA25B43C1B004236CC /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013D925B43C1B004236CC /* Score.swift */; };
+		D28013E025B46900004236CC /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = D28013DE25B46900004236CC /* Stars.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D28013CA25B42B47004236CC /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		D28013D425B43BE5004236CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D28013D925B43C1B004236CC /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		D28013DE25B46900004236CC /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stars.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		D223F88125B31C070050B2F3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				D28013DE25B46900004236CC /* Stars.sks */,
 				D223F88925B3285B0050B2F3 /* GameScene.sks */,
 				D223F86D25B318C50050B2F3 /* GameScene.swift */,
 				D28013C725B42879004236CC /* SpaceShip.swift */,
@@ -175,6 +178,7 @@
 				D223F87325B318C50050B2F3 /* Main.storyboard in Resources */,
 				D223F87525B318C70050B2F3 /* Assets.xcassets in Resources */,
 				D223F8F425B337490050B2F3 /* Launch Screen.storyboard in Resources */,
+				D28013E025B46900004236CC /* Stars.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
