@@ -2,7 +2,7 @@
 
 My first SpriteKIT game
 
-<table>
+<table border=0>
     <tr>
         <td>
             <img src="https://github.com/KurKing/Space-War-Game/blob/master/Screenshots/Screenshot1.png" width="250" align = "center">
