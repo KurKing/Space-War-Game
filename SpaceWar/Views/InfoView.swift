@@ -104,6 +104,7 @@ struct InfoView: View {
     }
 }
 
+//MARK: - Preview
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView()

@@ -11,9 +11,9 @@ import GameplayKit
 class GameSceneContainer {
     static let shared = GameSceneContainer()
     
-    private var gameScene: SKScene?
+    private var gameScene: GameScene?
     
-    var scene: SKScene {
+    var scene: GameScene {
         if let scene = gameScene {
             return scene
         } else {

@@ -15,6 +15,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var spaceBackground: SKSpriteNode!
     private var stars: SKSpriteNode!
     
+    var canSpaceShipMove = false
+    var delegateView: ContentView?
+    
     //MARK: Did Move
     override func didMove(to view: SKView) {
     
@@ -44,12 +47,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Touches
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let touchLocation = touch.location(in: self)
-            spaceShip.move(to: touchLocation)
-            
-            let bgMoveAction = SKAction.move(to: CGPoint(x: -touchLocation.x/80, y: -touchLocation.y/80), duration: 0.1)
-            spaceBackground.run(bgMoveAction)
+        if canSpaceShipMove{
+            if let touch = touches.first {
+                let touchLocation = touch.location(in: self)
+                spaceShip.move(to: touchLocation)
+                
+                let bgMoveAction = SKAction.move(to: CGPoint(x: -touchLocation.x/80, y: -touchLocation.y/80), duration: 0.1)
+                spaceBackground.run(bgMoveAction)
+            }
         }
     }
     
@@ -61,18 +66,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if meteor.position.y < -heigth/2-meteor.frame.height {
                 meteor.removeFromParent()
+                self.delegateView?.addOneToScore()
             }
         }
     }
     //MARK: SKPhysicsContactDelegate
     func didBegin(_ contact: SKPhysicsContact) {
         if isCollisionHappend(contact) {
-            // lose
+            delegateView?.lose()
         }
     }
     
     private func isCollisionHappend(_ contact: SKPhysicsContact) -> Bool {
         return contact.bodyA.categoryBitMask == Categories.spaceShip || contact.bodyB.categoryBitMask == Categories.spaceShip
+    }
+    
+    /// delete all nodes with name "meteor"
+    func deleteMeteors(){
+        enumerateChildNodes(withName: "meteor") { (meteor, stop) in
+            meteor.removeFromParent()
+        }
     }
 
 }

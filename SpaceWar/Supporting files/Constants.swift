@@ -17,3 +17,8 @@ struct ImageNames {
     static let meteor = "meteor"
     static let backgroundImage = "bg"
 }
+
+struct Keys {
+    static let scoreKey = "scoreKey"
+    static let maxScoreKey = "maxScoreKey"
+}

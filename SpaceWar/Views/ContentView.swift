@@ -9,25 +9,39 @@ import SwiftUI
 import SpriteKit
 import GameplayKit
 
-struct ContentView: View, ButtonPressedDelegate {
+struct ContentView: View, ButtonPressedDelegate, GameSceneDelegate {
     
     //MARK: - Properties
-    @State var showMenu = true
-    @State var isGamePaused = false
+    @State private var showMenu = true
+    @State private var isGamePaused = false
+    @State private var gameScore: Int = 0
     
-    func playButtonPressedDelegate() {
-        showMenu = false
+    func playButtonPressed() {
+        if !isGamePaused {
+            gameScore = 0
+            GameSceneContainer.shared.scene.deleteMeteors()
+            GameSceneContainer.shared.scene.canSpaceShipMove = true
+        }
         GameSceneContainer.shared.scene.isPaused = false
+        isGamePaused = false
+        showMenu = false
     }
     
-    func gearButtonPressedDelegate() {
-        
+    func addOneToScore() {
+        if !showMenu{
+            gameScore += 1
+        }
     }
     
-    func questionButtonPressedDelegate() {
-        
+    func lose() {
+        if UserDefaults.standard.integer(forKey: Keys.maxScoreKey) < gameScore {
+            UserDefaults.standard.setValue(gameScore, forKey: Keys.maxScoreKey)
+        }
+        showMenu = true
+        gameScore = 0
+        isGamePaused = false
+        GameSceneContainer.shared.scene.canSpaceShipMove = false
     }
-    
     
     //MARK: - Body
     var body: some View {
@@ -47,10 +61,26 @@ struct ContentView: View, ButtonPressedDelegate {
                             .frame(width: 50, height: 50, alignment: .center)
                     })
                     .padding(.trailing, 20)
-                    .padding(.top, 10)
+                    .padding(.top, 20)
                     .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
                     .blur(radius: showMenu ? 5 : 0), alignment: .topTrailing
                 )
+                .overlay(
+                    HStack {
+                        Image("meteor")
+                            .resizable()
+                            .frame(width: 30, height: 30, alignment: .center)
+                        Text("x \(gameScore)")
+                            .foregroundColor(.white)
+                            .font(.system(.title, design: .rounded))
+                            .bold()
+                    }
+                    .padding(.leading, 20)
+                    .padding(.top, 25)
+                    .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
+                    .blur(radius: showMenu ? 5 : 0), alignment: .topLeading
+                )
+                .ignoresSafeArea(.all)
             
             if showMenu {
                 MenuView(delegate: self)
@@ -61,11 +91,14 @@ struct ContentView: View, ButtonPressedDelegate {
         .background(
             Color.black.ignoresSafeArea(.all)
         )
+        .onAppear(){
+            GameSceneContainer.shared.scene.delegateView = self
+        }
         
     }//:Body
 }
 
-//MARK: - Settings
+//MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

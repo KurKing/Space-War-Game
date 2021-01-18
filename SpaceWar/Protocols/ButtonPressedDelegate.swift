@@ -8,5 +8,6 @@
 import Foundation
 
 protocol ButtonPressedDelegate {
-    func playButtonPressedDelegate()
+    /// cals when play menu button pressed
+    func playButtonPressed()
 }

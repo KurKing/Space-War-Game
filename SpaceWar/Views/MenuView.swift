@@ -9,17 +9,20 @@ import SwiftUI
 
 struct MenuView: View {
     
+    //MARK: - Properties
     @State private var buttonAnimating = false
     @State private var showInfoView = false
     @State private var showSettingsView = false
+    
+    let maxScore = UserDefaults.standard.integer(forKey: Keys.maxScoreKey)
     let delegate: ButtonPressedDelegate
     
-    
+    //MARK: - Body
     var body: some View {
         VStack {
             // Play button
             Button(action: {
-                delegate.playButtonPressedDelegate()
+                delegate.playButtonPressed()
             }, label: {
                 Image("play-button")
                     .resizable()
@@ -32,9 +35,30 @@ struct MenuView: View {
                 buttonAnimating.toggle()
             }
             
-            
-            Spacer()
-                .frame(height: 30)
+            if maxScore > 0 {
+                HStack(alignment: .center){
+                    Text("Max:")
+                        .foregroundColor(.white)
+                        .font(.system(.title, design: .rounded))
+                        .bold()
+                        
+                        
+                    Image("meteor")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                    
+                    Text("x\(UserDefaults.standard.integer(forKey: Keys.maxScoreKey))")
+                        .foregroundColor(.white)
+                        .font(.system(.title, design: .rounded))
+                        .bold()
+                    
+                }//:HStack
+                .shadow(color: Color.black.opacity(0.3), radius: 8, x: 3, y: 2)
+                .padding(.top, 20)
+                .padding(.bottom, 10)
+            } else {
+                Spacer().frame(height: 30)
+            }
             
             HStack(alignment: .center, spacing: 30){
                 
@@ -51,18 +75,18 @@ struct MenuView: View {
                     InfoView()
                 })
                 
-                //gear button
-                Button(action: {
-                    showSettingsView.toggle()
-                }, label: {
-                    Image("gear-button")
-                        .resizable()
-                        .frame(width: 60, height: 60, alignment: .center)
-                })
-                .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
-                .sheet(isPresented: $showSettingsView, content: {
-                    SettingsView()
-                })
+//                //gear button
+//                Button(action: {
+//                    showSettingsView.toggle()
+//                }, label: {
+//                    Image("gear-button")
+//                        .resizable()
+//                        .frame(width: 60, height: 60, alignment: .center)
+//                })
+//                .shadow(color: Color.black.opacity(0.8), radius: 8, x: 3, y: 2)
+//                .sheet(isPresented: $showSettingsView, content: {
+//                    SettingsView()
+//                })
             }
         }//:VStack
         .padding(40)

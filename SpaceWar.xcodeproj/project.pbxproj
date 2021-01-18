@@ -21,6 +21,7 @@
 		D28013FA25B47E43004236CC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013F925B47E43004236CC /* SettingsView.swift */; };
 		D28013FD25B48372004236CC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28013FC25B48372004236CC /* MenuView.swift */; };
 		D280140725B494D4004236CC /* ButtonPressedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280140625B494D4004236CC /* ButtonPressedDelegate.swift */; };
+		D2DA851F25B5999000BFDD8D /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DA851E25B5999000BFDD8D /* GameSceneDelegate.swift */; };
 		D2E2836A25B4B49E00C6B716 /* GameSceneContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E2836925B4B49E00C6B716 /* GameSceneContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		D28013F925B47E43004236CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D28013FC25B48372004236CC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D280140625B494D4004236CC /* ButtonPressedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressedDelegate.swift; sourceTree = "<group>"; };
+		D2DA851E25B5999000BFDD8D /* GameSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneDelegate.swift; sourceTree = "<group>"; };
 		D2E2836925B4B49E00C6B716 /* GameSceneContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D280140625B494D4004236CC /* ButtonPressedDelegate.swift */,
+				D2DA851E25B5999000BFDD8D /* GameSceneDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28013FA25B47E43004236CC /* SettingsView.swift in Sources */,
+				D2DA851F25B5999000BFDD8D /* GameSceneDelegate.swift in Sources */,
 				D2570A8925B4B9FC00F58EB2 /* InfoView.swift in Sources */,
 				D28013FD25B48372004236CC /* MenuView.swift in Sources */,
 				D223F86E25B318C50050B2F3 /* GameScene.swift in Sources */,
