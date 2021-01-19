@@ -101,6 +101,7 @@ struct InfoView: View {
             .padding(.trailing, 20)
             , alignment: .topTrailing
         )
+        .padding(.top, 10)
     }
 }
 

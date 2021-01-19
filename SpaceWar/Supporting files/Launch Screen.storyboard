@@ -18,22 +18,36 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="FB3-oa-0Wt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redSpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="VIa-gP-KO2">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="WKs-hO-pyH">
+                                <rect key="frame" x="107" y="331.5" width="200" height="233"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redSpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="VIa-gP-KO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Ekr-Y0-Na0"/>
+                                            <constraint firstAttribute="width" constant="200" id="b4d-zh-OSW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by #KurKing." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-LP-UAG">
+                                        <rect key="frame" x="0.0" y="209" width="200" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Ekr-Y0-Na0"/>
-                                    <constraint firstAttribute="width" constant="250" id="b4d-zh-OSW"/>
+                                    <constraint firstItem="YsJ-LP-UAG" firstAttribute="centerX" secondItem="WKs-hO-pyH" secondAttribute="centerX" id="y2k-4C-IAY"/>
                                 </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FB3-oa-0Wt" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6wz-qD-kG1"/>
                             <constraint firstItem="FB3-oa-0Wt" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="BBJ-f0-EvR"/>
+                            <constraint firstItem="WKs-hO-pyH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BZG-0c-Xue"/>
+                            <constraint firstItem="WKs-hO-pyH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CuW-Ln-ojv"/>
                             <constraint firstAttribute="bottom" secondItem="FB3-oa-0Wt" secondAttribute="bottom" id="IWA-L0-sF5"/>
-                            <constraint firstItem="VIa-gP-KO2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LZL-g1-qrm"/>
-                            <constraint firstItem="VIa-gP-KO2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Tca-aE-9Wc"/>
                             <constraint firstItem="FB3-oa-0Wt" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="nFK-YE-9f8"/>
                         </constraints>
                     </view>

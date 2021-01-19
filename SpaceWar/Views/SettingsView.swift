@@ -55,19 +55,19 @@ struct SettingsView: View {
                 }//:Section
             }//:Form
         }//:VStack
-            .overlay(
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image("x-button")
-                        .resizable()
-                        .frame(width: 35, height: 35, alignment: .center)
-                }
-                .shadow(color: Color.black.opacity(0.3), radius: 8, x: 3, y: 2)
-                .padding(.top, 15)
-                .padding(.trailing, 20)
-                , alignment: .topTrailing
-            )
+        .overlay(
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image("x-button")
+                    .resizable()
+                    .frame(width: 35, height: 35, alignment: .center)
+            }
+            .shadow(color: Color.black.opacity(0.3), radius: 8, x: 3, y: 2)
+            .padding(.top, 15)
+            .padding(.trailing, 20)
+            , alignment: .topTrailing
+        )
     }
 }
 
